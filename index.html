@@ -1,0 +1,33 @@
+<html> 
+  <head>
+    <title>Test</title> 
+  </head>
+ 
+  <body> 
+    <h1>Hier Text einfuegen:</h1> 
+</br>
+        <input type="text" id="text" name="itText">
+  </br>
+        <button id="btnSubmit" onclick="onClick()">Klick mich</button>
+    </br>
+        <label id="endwert"></label>
+
+        <script type="text/javascript">
+            function onClick()
+            {
+                let msg = document.getElementById("text").value;
+                var endString ="";
+                var i;
+                for(i=0; i < msg.length; i++){
+                    if(i%2 != 0){
+                        endString += msg.substring(i,i+1).toUpperCase();
+                    }else{
+                        endString += msg.substring(i,i+1);
+                    }
+                }
+                document.getElementById("endwert").textContent = endString;
+            }
+        </script>
+  </body>
+</html>
+
