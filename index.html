@@ -21,6 +21,7 @@
 
                 for(i=0; i < msg.length; i++){
                     if(msg.substring(i,i+1)==" "){
+                        endString+=" ";
                         if(i++%2 != 0){
                             endString += msg.substring(i,i+2).toUpperCase();
                         }
