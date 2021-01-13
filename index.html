@@ -17,26 +17,37 @@
             {
                 let msg = document.getElementById("text").value;
                 var endString ="";
+                var editString = "";
+                var ausgabeString = "";
                 var i;
 
                 //0 1 2 3 4 5 6 7 8 9 10
                 //t e s t   b i t t e 
                 for(i=0; i < msg.length; i++){
-                    if(msg.substring(i,i+1)==" "){
-                        if(i%2 == 0){
-                            endString += msg.substring(i,i+1).toUpperCase();
-                        }else{
-                            endString += msg.substring(i,i+1);
-                        }
+                    if(msg.charAt(i) == " "){
+                        endString += "  ";
                     }
                     else{
-                        if(i%2 != 0){
-                            endString += msg.substring(i,i+1).toUpperCase();
-                        }
+                        endString += msg.charAt(i);
                     }
-
                 }
-                document.getElementById("endwert").textContent = endString;
+
+                for(i=0; i<endString.length; i++){
+                    editString += i % 2 == 0 ? input.charAt(i).toUpperCase() : input.charAt(i);
+                }
+
+                for(i=0; i<editString.length; i++){
+                    if(editString.charAt(i)==" "){
+
+                        if(editString.charAt(i++) == " "){
+                            ausgabeString+=editString.charAt(i);
+                            continue;
+                        }
+                    } else{
+                        ausgabeString+=editString.charAt(i);
+                    }
+                }
+                document.getElementById("endwert").textContent = ausgabeString;
             }
         </script>
   </body>
