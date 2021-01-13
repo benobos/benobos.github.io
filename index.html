@@ -18,11 +18,22 @@
                 let msg = document.getElementById("text").value;
                 var endString ="";
                 var i;
-                for(i=0; i < msg.length; i++){
+                var countEmpty;
+
+                for(i = 0; i<msg.length; i++){
+                    if(msg.substring(i,i+1) == " "){
+                        countEmpty++;
+                    }
+                }
+                for(i=0; i < (msg.length+countEmpty); i++){
+                    if(msg.substring(i,i+1)== " "){
+                        i--;
+                    } else{
                     if(i%2 != 0){
                         endString += msg.substring(i,i+1).toUpperCase();
                     }else{
                         endString += msg.substring(i,i+1);
+                    }
                     }
                 }
                 document.getElementById("endwert").textContent = endString;
