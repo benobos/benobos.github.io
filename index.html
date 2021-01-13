@@ -23,9 +23,8 @@
                 //t e s t   b i t t e 
                 for(i=0; i < msg.length; i++){
                     if(msg.substring(i,i+1)==" "){
-                        endString += " ";
                         if(i%2 == 0){
-                            endString += msg.substring(i,i+2).toUpperCase();
+                            endString += msg.substring(i,i+1).toUpperCase();
                         }else{
                             endString += msg.substring(i,i+1);
                         }
