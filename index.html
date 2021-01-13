@@ -12,6 +12,8 @@
     </br>
         <label id="endwert"></label>
 
+        <label>neuester Push</label>
+
         <script type="text/javascript">
             function onClick()
             {
@@ -33,7 +35,7 @@
                 }
 
                 for(i=0; i<endString.length; i++){
-                    editString += i % 2 == 0 ? endString.charAt(i) : endString.charAt(i).toUpperCase();
+                    editString += i % 2 != 0 ? endString.charAt(i) : endString.charAt(i).toUpperCase();
                 }
 
                 for(i=0; i<editString.length; i++){
